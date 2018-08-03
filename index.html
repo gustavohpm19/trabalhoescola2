@@ -1,0 +1,126 @@
+
+<!DOCTYPE html><html lang="pt-br"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="google-site-verification" content="FjDxiddkSQXOHTFWCpYqrXpjj7wCoCcX1krRxTCHuq0" /><meta name="google-site-verification" content="igmWNUz0B_VblujqXG47m32FBgjyQ5Zc2Oq-3YzSZv8" /><title>Aprenda Git</title><link href="/css/games.css?v=1526564742789" rel="stylesheet" type="text/css" media="screen" /><link href="/css/git.css?v=1526564742789" rel="stylesheet" type="text/css" media="screen" /><script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-1508082-6', 'auto');
+  ga('send', 'pageview');
+</script></head><body><div class="navbar navbar-fixed-top"><div class="navbar-inner"><div class="container"><a class="brand" href="/aprenda/git">Aprenda Git</a><ul class="nav"><li class="active"><a id="select-a-provider" class="brand pull-right nav-link" data-toggle="modal" href="#logon-provider">Login</a></li><li><a href="/about">Sobre</a></li></ul><div class="ribbon-holder"><a href="https://github.com/vidageek/games" class="ribbon"><span class="text">Ajude-nos no GitHub</span></a></div></div></div></div><div id="main-content" class="container"><div class="alert"><strong>Aviso!</strong> Estamos em Beta. Caso encontre algum problema, envie um email para games@vidageek.net</div><h1>Aprenda Git</h1><p>Git é uma ferramenta de controle de versão que tem crescido muito nos últimos anos. Este jogo cobre os principais comandos e fluxos de trabalho com esta ferramenta.</p>Você pode começar os exercícios pelo <a href="/aprenda/git/task/0">primeiro</a> ou escolher um grupo abaixo:<a id="conteudo" class="theory-link"></a><h2 class="theory">Conteúdo:</h2><ul class="nav nav-pills nav-stacked groups"><li class=""><a href="/aprenda/git/task/0">Criar um repositório</a></li><li class=""><a href="/aprenda/git/task/2">Adicionar arquivos</a></li><li class=""><a href="/aprenda/git/task/11">Fazer Commits</a></li><li class=""><a href="/aprenda/git/task/27">Criar Branches</a></li><li class=""><a href="/aprenda/git/task/34">Mudar de branch ativo</a></li><li class=""><a href="/aprenda/git/task/47">Merge de branches</a></li><li class=""><a href="/aprenda/git/task/58">Rebase de branches</a></li><li class=""><a href="/aprenda/git/task/72">Enviar commits para branches remotos (Push)</a></li><li class=""><a href="/aprenda/git/task/82">Pegar commits de branches remotos (Pull)</a></li><li class=""><a href="/aprenda/git/task/86">Git Workflow</a></li></ul><a id="git.init" class="theory-link"></a><div><h2><a href="#git.init">Criar um repositório</a></h2><p>O primeiro passo para trabalhar com Git é criar um repositório.</p>
+<p>Para isso, basta rodar o comando <code>git init NOME_DO_REPOSITORIO</code>.</p>
+<p>Exemplo:</p>
+<ul>
+<li><code>git init games</code> cria a pasta chamada <strong>games</strong>, que é um repositório Git.</li>
+</ul>
+<a class="btn" href="#conteudo">Topo</a><a class="btn btn-info" href="/aprenda/git/task/0">Começar!</a></div><a id="git.add" class="theory-link"></a><div><h2><a href="#git.add">Adicionar arquivos</a></h2><p>Do ponto do vista do Git, existem quatro estados no qual um determinado arquivo pode estar.</p>
+<ul>
+<li><strong>Commited:</strong> O arquivo está sob controle de versão e não apresenta nenhuma modificação.</li>
+<li><strong>Commit candidate:</strong> Caso você crie um conjunto de modificações (commit), esses serão os arquivos incluídos.</li>
+<li><strong>Modified:</strong> Arquivos que foram modificados.</li>
+<li><strong>Untracked:</strong> Arquivos novos, que ainda não estão no controle de versão.</li>
+</ul>
+<p>Para mudar um arquivo de <strong>untracked</strong> ou <strong>modified</strong> para <strong>Commit candidate</strong>,
+você usa o comando <code>git add CAMINHO</code>.</p>
+<p>O <code>git add</code> é inteligente, então se você passar um caminho parcial para ele, ele muda o estado de todos
+os arquivos que contiverem esse caminho parcial.</p>
+<p>Exemplo:</p>
+<ul>
+<li><code>git add .</code> mudaria o estado de todos os arquivos a partir do diretório atual.</li>
+<li><code>git add arquivo.txt</code> mudaria o estado do arquivo <strong>arquivo.txt</strong></li>
+<li><code>git add pasta</code> mudaria o estado do arquivo <strong>pasta/arq1.txt</strong> e do <strong>pasta/arq2.txt</strong>, mas não mudaria do <strong>outra_pasta/arq1.txt</strong></li>
+</ul>
+<a class="btn" href="#conteudo">Topo</a><a class="btn btn-info" href="/aprenda/git/task/2">Começar!</a></div><a id="git.commit" class="theory-link"></a><div><h2><a href="#git.commit">Fazer Commits</a></h2><p>Agora que você já sabe como selecionar as modificações que quer incluir em um pacote de modificações (um commit), 
+chegou a hora de aprender como gerar esse pacote.</p>
+<p>O comando utilizado para criar um commit em git é <code>git commit</code>. Com esse comando, todos os arquivos que
+estiverem marcados como <strong>Commit candidate</strong> serão incluídos no commit.</p>
+<p>Se você também quiser incluir os arquivos que estão marcados como <strong>modified</strong>, você 
+pode incluir a flag <code>-a</code>.</p>
+<p>Uma coisa muito importante de qualquer commit é uma mensagem que explique o que significa aquele commit. 
+Para isso, você pode passar a opção <code>-m &quot;mensagem de commit&quot;</code>. Caso você não passe, 
+o git vai abrir um editor de texto para que você digite a mensagem.</p>
+<p>Exemplo:</p>
+<ul>
+<li><code>git commit -m &quot;commit&quot;</code> cria um commit com todos os <strong>Commit candidate</strong> e a mensagem <strong>commit</strong></li>
+<li><code>git commit -a -m &quot;segundo commit&quot;</code> cria um commit com os arquivos marcados como <strong>Commit candidate</strong> e os <strong>modified</strong> e junta com a mensagem <strong>segundo commit</strong></li>
+</ul>
+<a class="btn" href="#conteudo">Topo</a><a class="btn btn-info" href="/aprenda/git/task/11">Começar!</a></div><a id="git.branch" class="theory-link"></a><div><h2><a href="#git.branch">Criar Branches</a></h2><p>Nos últimos exercícios você deve ter notado que seus commits ficaram em um lugar chamado <strong>master</strong>.</p>
+<p>Esse <strong>master</strong> é um <strong>branch</strong> que o git cria automagicamente quando você faz um
+commit sem estar em nenhum branch (como é o caso de um repositório recém criado).</p>
+<p>Quando usamos Git, quase todas as operações são feitas dentro de um branch. Um branch nada mais é 
+que uma lista de commits. Você pode criar, apagar e renomear branches.</p>
+<p>Para criar você usa o comando <code>git branch NOME_DO_BRANCH</code>. Para apagar <code>git branch -D NOME_DO_BRANCH</code>. 
+E para renomear você usa <code>git branch -m NOME_ANTIGO NOME_NOVO</code>. </p>
+<p>Exemplo:</p>
+<ul>
+<li><code>git branch work</code> cria o branch <strong>work</strong></li>
+<li><code>git branch -D work</code> apaga o branch <strong>work</strong></li>
+<li><code>git branch -m work asdrubal</code> renomeia o branch <strong>work</strong> para <strong>asdrubal</strong></li>
+</ul>
+<a class="btn" href="#conteudo">Topo</a><a class="btn btn-info" href="/aprenda/git/task/27">Começar!</a></div><a id="git.checkout" class="theory-link"></a><div><h2><a href="#git.checkout">Mudar de branch ativo</a></h2><p>Agora que você já sabe criar novos branches, podemos começar a trabalhar nesses branches criados.</p>
+<p>Para você mudar o branch ativo (branch onde são colocados os seus commits), você usa
+o comando <code>git checkout</code></p>
+<p>Exemplo:</p>
+<ul>
+<li><p><code>git checkout work</code> muda para o branch <strong>work</strong> que você tenha criado previamente.</p>
+</li>
+</ul>
+<p>Como é muito comum querer criar e mudar para o branch novo, você pode usar a flag <code>-b</code> para o git criar o branch automaticamente.</p>
+<p>Exemplo:</p>
+<ul>
+<li><code>git checkout -b asdrubal</code> cria o branch <strong>asdrubal</strong> e coloca ele como ativo.</li>
+</ul>
+<a class="btn" href="#conteudo">Topo</a><a class="btn btn-info" href="/aprenda/git/task/34">Começar!</a></div><a id="git.merge" class="theory-link"></a><div><h2><a href="#git.merge">Merge de branches</a></h2><p>Como sempre trabalhamos com branches, uma operação muito útil é juntar código de branches diferentes.</p>
+<p>No Git, uma das formas de se fazer isso é o <strong>Merge</strong> e o comando para fazer o merge é <code>git merge BRANCH_DE_ORIGEM</code>.</p>
+<p>O <strong>Merge</strong> vai olhar para as duas branches (a atual e a de origem), encontrar a base comum (quais os commits 
+que ambas tem) e vai aplicar os commits que a branch atual <strong>não</strong> tem por <strong>cima</strong> dos commits que estão nela.</p>
+<p>Caso existam commits na branch atual que não fazem parte da base, ele cria automaticamente um <strong>commit de merge</strong>.</p>
+<p>Exemplo:</p>
+<ul>
+<li><code>git merge work</code> moverá todos os commits (acima da base) da branch <strong>work</strong> para a branch atual.</li>
+</ul>
+<a class="btn" href="#conteudo">Topo</a><a class="btn btn-info" href="/aprenda/git/task/47">Começar!</a></div><a id="git.rebase" class="theory-link"></a><div><h2><a href="#git.rebase">Rebase de branches</a></h2><p>Outra forma de mover commits de um branch para o outro é o <strong>Rebase</strong>.</p>
+<p>O <strong>Rebase</strong> funciona de forma muito semelhante ao <strong>Merge</strong>. A diferença é a ordem em que
+os commits são aplicados.</p>
+<p>No <strong>Merge</strong>, os commits do outro branch são aplicados por cima dos commits do branch atual.</p>
+<p>No <strong>Rebase</strong>, os seus commits (acima da base) são <strong>temporariamente</strong> apagados, o branch atual
+fica exatamente igual ao outro branch e seus commits são aplicados <strong>um a um</strong> no branch atual.</p>
+<p>Uma das vantagens disso é que dessa forma, você consegue manter um histórico organizado. </p>
+<p>Para fazer o <strong>Rebase</strong>, você usa o comando <code>git rebase BRANCH_DE_ORIGEM</code>.</p>
+<p>Exemplo:</p>
+<ul>
+<li><code>git rebase master</code> moverá todos os commits (acima da base) da branch <strong>master</strong> para a branch atual, mas abaixo dos seus commits acima da base.</li>
+</ul>
+<a class="btn" href="#conteudo">Topo</a><a class="btn btn-info" href="/aprenda/git/task/58">Começar!</a></div><a id="git.push" class="theory-link"></a><div><h2><a href="#git.push">Enviar commits para branches remotos (Push)</a></h2><p>Para facilitar com que outras pessoas utilizem e colaborem com o seu código, uma 
+operação muito comum é enviar as suas modificações para um branch em um servidor 
+remoto (em geral chamado de <strong>origin</strong>)</p>
+<p>Esse servidor remote pode ser um simples repositório Git em uma máquina acessível
+a todos os membros do time.</p>
+<p>Para enviar os commits do seu branch atual para o servidor remoto você usa o comando
+ <code>git push REPO_REMOTO BRANCH</code>.</p>
+<p> É muito importante que a base do seu branch atual seja o último commit que está
+ no repositório remoto. Se isso não acontecer, seu <strong>Push</strong> será negado.</p>
+<p>Exemplo:</p>
+<ul>
+<li><code>git push origin master</code> envia os commits do seu branch <strong>atual</strong> para o branch <strong>master</strong> do repositório <strong>origin</strong></li>
+</ul>
+<a class="btn" href="#conteudo">Topo</a><a class="btn btn-info" href="/aprenda/git/task/72">Começar!</a></div><a id="git.pull" class="theory-link"></a><div><h2><a href="#git.pull">Pegar commits de branches remotos (Pull)</a></h2><p>Para trazer commits de um repositório remoto você usa o comando <code>git pull REPO_REMOTO BRANCH</code>.</p>
+<p>O <strong>Pull</strong> funciona de forma muito parecido com o <strong>Merge</strong>, mas ele serve para branches remotos.</p>
+<p>Exemplo:</p>
+<ul>
+<li><code>git pull origin master</code> pega os commits do branch <strong>master</strong> do servidor remoto <strong>origin</strong> e aplica ao seu branch <strong>atual</strong>.</li>
+</ul>
+<a class="btn" href="#conteudo">Topo</a><a class="btn btn-info" href="/aprenda/git/task/82">Começar!</a></div><a id="git.workflow" class="theory-link"></a><div><h2><a href="#git.workflow">Git Workflow</a></h2><p>Uma das principais mudanças que acontecem quando você passa a usar Git
+é que o seu fluxo de trabalho muda.</p>
+<p>Um <a href="http://www.vidageek.net/2009/07/06/git-workflow/">fluxo de trabalho muito comum com Git</a> funciona da seguinte forma:</p>
+<ul>
+<li>Checkout para o seu branch de trabalho</li>
+<li>Programar e fazer vários pequenos commits</li>
+<li>Pegar as modificações que outros programadores tenham feito</li>
+<li>Rebase no seu branch de trabalho (para manter o histórico linear)</li>
+<li>Enviar as modificações para o servidor remoto</li>
+</ul>
+<p>São bem mais passos do que se você utilizar <a href="http://subversion.tigris.org/">Svn</a>, por exemplo,
+mas é um fluxo muito mais flexivel. E depois que você se acostuma,
+você faz o fluxo automaticamente.</p>
+<a class="btn" href="#conteudo">Topo</a><a class="btn btn-info" href="/aprenda/git/task/86">Começar!</a></div></div><section><div id="logon-provider" class="modal hide fade in"><div class="modal-body"><a class="close" data-dismiss="modal">X</a><form action="/player" method="POST"><label for="email">Email:</label><input name="email" /><input type="submit" value="Logar" /></form><div class="alert alert-info"><a href="/senha">Porquê não preciso colocar minha senha?</a></div></div></div></section><script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script><script type="text/javascript" src="/js/games.js?v=1526564742789"></script><script type="text/javascript" src="/js/git.js?v=1526564742789"></script></body></html>
