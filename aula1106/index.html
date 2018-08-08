@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>trabalho git</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+
+  <body background="C:\Users\IFSP\Desktop\aula1106\hub.png">
+
+  
+	<!-- Seu código vai aqui! -->
+
+<div class="cabeçalho">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="#"><img src="C:\Users\IFSP\Desktop\aula1106\git.png"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active ">
+        <h2>Tutorial do GitHub</h2>
+      </li>
+    </ul>
+  </div>
+</nav>
+</div>
+
+
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active list-group-item-primary">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Como usar o Git</h5>
+      <small class="text-muted">Passo 1</small>
+    </div>
+    <p class="mb-1"> Antes de qualquer coisa, é preciso que você instale algumas coisas, como a versão mais recente de Git para o seu sistema operacional. Se estiver usando o Linux, você poderá instalá-la usando seu gerenciador de pacotes.</p>
+    
+  </a>
+
+  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active list-group-item-primary">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1"></h5>
+      <small class="text-muted">Passo 2</small>
+    </div>
+    <p class="mb-1">É preciso que você esteja minimamente familiarizado com a utilização da linha de comando. Caso ainda não esteja, tudo bem: este artigo trata tudo de forma clara e simples.</p>
+    
+  </a>
+
+  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start list-group-item-primary active">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1"></h5>
+      <small class="text-muted">Passo 3</small>
+    </div>
+    <p class="mb-1">Crie um repositório simples, composto por um arquivo de código e um README. Certifique-se de ter um diretório reservado para isso.
+
+Com tudo preparado, agora vamos passar para um conjunto padrão de ações que você costuma seguir diariamente – mais especificamente, init, clone, add, commit, diff e log.</p>
+   
+  </a>
+
+   <a href="#" class="list-group-item list-group-item-action flex-column align-items-start list-group-item-success active">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1"></h5>
+      <small class="text-muted">CRIANDO UM REPOSITORIO</small>
+    </div>
+    <p class="mb-1">O primeiro passo para trabalhar com o Git é inicializar um repositório de projeto para que o próprio Git possa gerenciá-lo. Para isso, execute o comando git init . como demonstrado abaixo.
+
+Um novo diretório oculto chamado .git surgirá no diretório de seu projeto. Nesse local, o Git armazena seus conjuntos de dados e informações de configuração.</p>
+  </a>
+
+     <a href="#" class="list-group-item list-group-item-action flex-column align-items-start list-group-item-success active">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1"></h5>
+      <small class="text-muted">CLONANDO UM REPOSITORIO</small>
+    </div>
+    <p class="mb-1">Esta é uma maneira alternativa de acessar um repositório: clonando. Semelhante à verificação de um repositório em outros sistemas, executar a função git clone < repository URL > criará uma cópia completa do repositório remoto em seu sistema local. Agora, você pode modificá-lo da maneira que quiser.</p>
+  </a>
+
+   <a href="#" class="list-group-item list-group-item-action flex-column align-items-start list-group-item-danger active">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1"></h5>
+      <small class="text-muted">ADICIONANDO UM NOVO ARQUIVO</small>
+    </div>
+    <p class="mb-1">Eu sou um desenvolvedor PHP, então utilizarei essa ferramenta para o tutorial. Se preferir utilizar o Python, Go ou alguma outra linguagem, fique à vontade. Crie um novo arquivo, chamado index.php, no diretório de seu projeto e adicione o seguinte código:
+
+<?php print "Hello World";
+Salve o arquivo e execute o comando git status. Isso exibirá o status atual de seu repositório, que, por sua vez, deve ser semelhante à captura de tela abaixo, com index.php listado como um novo arquivo não rastreado.</p>
+  </a>
+
+   <a href="#" class="list-group-item list-group-item-action flex-column align-items-start list-group-item-warning active">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1"></h5>
+      <small class="text-muted">O PRIMEIRO COPMMIT</small>
+    </div>
+    <p class="mb-1">O commit do Git é muito parecido com o commit de outros sistemas de controle de versão, como o Subversion. Após iniciado o processo, adicione uma mensagem de commit que explique o motivo da alteração e pronto. O arquivo está alterado. Execute git commit. Seu editor abrirá e aparecerá o modelo de commit abaixo:
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# 
+# Initial commit
+# 
+# Changes to be committed:
+# new file:   index.php
+# 
+# Untracked files:
+# README.md
+Tal como acontece com o output do git status, você pode acompanhar o status de seu repositório de trabalho, o que facilita lembrar onde está trabalhando com commit e onde não está.
+
+Uma boa mensagem de commit é composta por duas partes: uma mensagem curta, com menos de 72 caracteres, o que indica resumidamente (na voz ativa) a alteração que está sendo feita; e uma descrição mais longa e opcional.
+
+No nosso caso, não é necessário escrever nada muito elaborado. Estamos apenas adicionando o arquivo ao repositório. Mas, se a alteração envolvesse um algoritmo mais complexo, seria importante compartilhar com seus colegas desenvolvedores o motivo pelo qual efetuou a mudança.
+
+Agora, adicione apenas a mensagem “Adicionando arquivo de script ao repositório”, salve e feche o editor. Execute git status novamente e você verá que README.md continua listado como não rastreado.
+
+</p>
+  </a>
+
+</div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/vendor/jquery-slim.min.js"></script>
+    <script src="assets/js/vendor/popper.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/holder.min.js"></script>
+    <script>
+      Holder.addTheme('thumb', {
+        bg: '#55595c',
+        fg: '#eceeef',
+        text: 'Thumbnail'
+      });
+    </script>
+  </body>
+</html>
